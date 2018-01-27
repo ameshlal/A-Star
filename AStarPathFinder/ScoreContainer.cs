@@ -29,12 +29,16 @@ namespace AStarPathFinder
          
         public void SetScore(ScoreType type, IStarNode node, float score)
         {
-            if (!_Scores.ContainsKey(type))
-                _Scores.Add(type, new Dictionary<IStarNode, float>()); 
-            if (_Scores[type].ContainsKey(node))
-                _Scores[type].Remove(node);   
 
-            _Scores[type].Add(node, score); 
+           
+                if (!_Scores.ContainsKey(type))
+                    _Scores.Add(type, new Dictionary<IStarNode, float>());
+                if (_Scores[type].ContainsKey(node))
+                    _Scores[type].Remove(node);
+
+                _Scores[type].Add(node, score);
+
+ 
         } 
 
 

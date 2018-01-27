@@ -1,6 +1,8 @@
 ﻿using AstarAlgoritm.Models;
 using AStarPathFinder.Models;
 using System;
+using System.Diagnostics;
+using System.Threading;
 
 namespace AstarAlgoritm
 {
@@ -9,12 +11,11 @@ namespace AstarAlgoritm
        
    
         static void Main(string[] args)
-        {
-
-            Console.WriteLine("A star Tests");
-
+        { 
+            Console.WriteLine("A star Tests"); 
             while (true)
             {
+                var timer = new Stopwatch(); 
                 // abc  Node
                 var a = new Node("A", 7);
                 var b = new Node("B", 3);
@@ -25,33 +26,63 @@ namespace AstarAlgoritm
                 var s = new Node("S", 5); 
                 var g1 = new Node("G1", 1);
                 var g2 = new Node("G2", 1);
-                var g3 = new Node("G3", 1); 
-                //  AddEdge  
-                a.AddEdge(new Edge(a, b, 3));
-                a.AddEdge(new Edge(a, g1, 9)); 
-                b.AddEdge(new Edge(b, a, 2));
-                b.AddEdge(new Edge(b, c, 1)); 
-                c.AddEdge(new Edge(c, g2, 5));
-                c.AddEdge(new Edge(c, f, 7));
-                c.AddEdge(new Edge(c, s, 6)); 
-                d.AddEdge(new Edge(d, e, 2));
-                d.AddEdge(new Edge(d, c, 2));
-                d.AddEdge(new Edge(d, s, 1)); 
-                e.AddEdge(new Edge(e, g3, 7)); 
-                f.AddEdge(new Edge(f, g3, 8));
-                f.AddEdge(new Edge(f, d, 2)); 
-                s.AddEdge(new Edge(s, d, 6));
-                s.AddEdge(new Edge(s, b, 9));
-                s.AddEdge(new Edge(s, a, 5)); 
-                 
+                var g3 = new Node("G3", 1);
+            
+
+
+                    a.AddEdge(new Edge(a, b, 3));
+                    a.AddEdge(new Edge(a, g1, 9 ));
+                    b.AddEdge(new Edge(b, a, 2 ));
+                    b.AddEdge(new Edge(b, c, 1 ));
+                    c.AddEdge(new Edge(c, g2, 5 ));
+
+                    c.AddEdge(new Edge(c, g2, 5 ));
+                    c.AddEdge(new Edge(c, g2, 6 ));
+                    c.AddEdge(new Edge(c, g2, 6 ));
+
+                    c.AddEdge(new Edge(c, g2, 7 ));
+                    c.AddEdge(new Edge(c, g2, 8 ));
+
+                    c.AddEdge(new Edge(c, g2, 5 ));
+
+                    c.AddEdge(new Edge(c, f, 7 ));
+                    c.AddEdge(new Edge(c, s, 6 ));
+                    d.AddEdge(new Edge(d, e, 2 ));
+                    d.AddEdge(new Edge(d, c, 2 ));
+                    d.AddEdge(new Edge(d, s, 1 ));
+                    e.AddEdge(new Edge(e, g3, 7 ));
+                    f.AddEdge(new Edge(f, g3, 8 ));
+                    f.AddEdge(new Edge(f, d, 2 ));
+                    s.AddEdge(new Edge(s, d, 6 ));
+                    s.AddEdge(new Edge(s, b, 9 ));
+                    s.AddEdge(new Edge(s, a, 5 ));
+               
+
+
+
                 var ASearcher = new AStarPathFinder.AStarPathFinder
                  (
 
-                     (IStarNode from, IStarNode to) => (float)Math.Sqrt(from.GetWeight() * to.GetWeight()),
+                     (IStarNode from, IStarNode to) => {
+                         for (int i = 0; i < 1000000m ; i++)
+                         {
+                             var r = (float)Math.Sqrt(from.GetWeight() * to.GetWeight() * i) ;
+                         }
+                         return (float)Math.Sqrt(from.GetWeight() * to.GetWeight()  )  ; 
+                     },
                      (IStarEdge edge) =>    edge.GetWeight()
-                ); 
+                );
 
-                var path = ASearcher.Search(s, g2);
+            
+                timer.Start();
+                var path = ASearcher.Search(s, g2,4);
+                timer.Stop();
+
+             
+
+                Console.WriteLine($"Time elapsed {timer.ElapsedMilliseconds}");
+                 
+
                 if (path != null)
                 {
                     Console.WriteLine(path); 
@@ -59,14 +90,17 @@ namespace AstarAlgoritm
                 else
                 {
                     Console.WriteLine("!!!!!!!! NOT FOUND ");  
-                }
+                }  
 
+                 
 
                 Console.ReadLine();
             }
-        } 
-         
-         
+        }
+
+ 
+
+
 
     }
 }

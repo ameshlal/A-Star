@@ -7,3 +7,12 @@ C:\Users\pashk\source\repos\AstarAlgoritm\AStarPathFinder\obj\Debug\netcoreapp2.
 C:\Users\pashk\source\repos\AstarAlgoritm\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.AssemblyInfo.cs
 C:\Users\pashk\source\repos\AstarAlgoritm\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.dll
 C:\Users\pashk\source\repos\AstarAlgoritm\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.pdb
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\bin\Debug\netcoreapp2.0\AStarPathFinder.deps.json
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\bin\Debug\netcoreapp2.0\AStarPathFinder.dll
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\bin\Debug\netcoreapp2.0\AStarPathFinder.pdb
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.csprojResolveAssemblyReference.cache
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.csproj.CoreCompileInputs.cache
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.AssemblyInfoInputs.cache
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.AssemblyInfo.cs
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.dll
+C:\Users\pashk\Desktop\A-Star-master\AStarPathFinder\obj\Debug\netcoreapp2.0\AStarPathFinder.pdb

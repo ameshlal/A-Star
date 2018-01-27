@@ -56,5 +56,11 @@ namespace AstarAlgoritm.Models
         {
             return _score.CompareTo(other.GetScore());
         }
+        bool visited = false;
+        public bool IsVisited() => visited;
+
+
+        public void Visit() => visited = true;  
+
     }
 }

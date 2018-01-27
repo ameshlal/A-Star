@@ -16,7 +16,13 @@ namespace AStarPathFinder.Models
 
         void SetSCore(float score); 
 
-        IList<IStarNode> PathToMe { set; get; } 
+        IList<IStarNode> PathToMe { set; get; }
+
+
+        bool IsVisited();
+
+        void Visit();
+
          
     }
 
